@@ -1,0 +1,19 @@
+1 - Why do we concatenate a column of ones to the left of the x vector when we use the linear algebra trick?
+
+In one sense, adding this column vector to the matrix fits a linear system of equations in the form y^ = X * theta, and makes sense in a mathematical way. This little trick makes it possible to perform this calculation. Furthermore, we could think matrices as linear transformations on a given vector space. Given a vector of 1's on the first column of our matrix, it represents that we can expand uniformally our vector space, on all dimensions, by the factor on theta[0]. It's just scaling of all these vectors.
+
+2 - Why does the cost function square the distances between the data points and their predicted values?
+
+In an intuitive fashion, it's squared for neglecting the effects of negative differences appearing on the deviations results. This could lower down the residues between measurements and estimates, which doesn't make physical sense. However, one might see this error as an energy arising from a very particular discrete-time signal, the differences between measurements and estimations. Therefore, the equation on https://en.wikipedia.org/wiki/Energy_(signal_processing) could be applied.
+
+3 - What does the cost function’s output represent?
+
+It represents the amount of information loss from the predicition in face of the measurements. The higher the cost function, the worst is the prediction model. This relationship is not linear.
+
+4 - Toward which value do we want the cost function to tend? What would that mean?
+
+Probably to zero, so our estimation approaches more to the measured value and our model fits better to the real world.
+
+5 - Do you understand why are matrix multiplications are not commutative?
+
+Let's imagine a matrix multiplication in the form A*B = C, with A being a linear transformation A: V1 -> W1 and B: V2 -> W2. The composition of these transformations, in the form A*B, is mapped to vector space V1 -> W1 -> V2 -> W2, which is basically reduced to A*B: V1 -> W2. In the other sense, the transformation B*A: V2 -> W1 is mapped into another space W1. Even when V1 = V2, not necessarily W1 = W2 (only when B and A are square diagonal matrices).
