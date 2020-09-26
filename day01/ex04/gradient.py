@@ -27,7 +27,7 @@ def gradient(x, y, theta):
     ones = np.ones(len(x))
     XL = np.vstack((ones, x)).T
     nabla = (XL.T @ (XL @ theta - y)) / len(x)
-    return nabla
+    return theta - nabla
 
 
 if __name__ == "__main__":

@@ -13,7 +13,7 @@ def cost_elem_(y, y_hat):
     """
     if y.shape != y_hat.shape:
         return None
-    return ((y_hat - y) ** 2) / (2 * len(y))
+    return ((y_hat - y) ** 2) / len(y)
 
 
 def cost_(y, y_hat):
